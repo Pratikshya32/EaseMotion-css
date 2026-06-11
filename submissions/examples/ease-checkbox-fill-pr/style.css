@@ -1,0 +1,25 @@
+.ease-checkbox-fill-pr {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+.ease-checkbox-container input:checked + .ease-checkbox-fill-pr {
+    border-color: #3b82f6;
+    background-color: #3b82f6;
+}
+.ease-checkbox-fill-pr::after {
+    content: '';
+    position: absolute;
+    top: 3px; left: 7px;
+    width: 5px; height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+}
+.ease-checkbox-container input:checked + .ease-checkbox-fill-pr::after {
+    transform: rotate(45deg) scale(1);
+}
